@@ -1,27 +1,21 @@
 from solution import *
-from time import time
+from main0 import run_test
 
 ##########코테 보기전 화장실
 ##########코테 보기전 화장실
 ##########코테 보기전 화장실
 if __name__ == '__main__':
-    testcases = [[[1, 2, 5, 3, 1, 0, 2, 3], 6, 3], [[0, 1, 2, 3, 4], 5, 2], [[0, 1, 2, 3, 4, 3], 5, 2]]
-    expectations = [5, 2, 1]
-    cnt=0
-    for i, tc in enumerate(testcases):
-        start = time()
-        print('Testcase',end=' - ')
-        print(i)
-        print('{0:<10}'.format('Input'), end=': ')
-        print(*tc if len(str(tc))<=200 else 'bigger than 200',sep=' // ')
-        print('{0:<10}'.format('Expected'), end=': ')
-        print(expectations[i])
-        real_val = solution(*tc)
-        print('{0:<10}'.format('Real value'), end=': ')
-        print(real_val)
-        print('{0:<10}'.format('Result')+':', expectations[i]==real_val)
-        print('{0:<10}'.format('Time')+':', int((time()-start)*1000),'ms')
-        print()
-        if expectations[i]==real_val: cnt+=1
-    print('End\n{0:<10}: {1}/{2} '.format('Total result',cnt,len(testcases)))
-    if cnt==len(testcases): print('All passed!')
+    testcases = [
+        [5,["100 1 3","500 4", "2000 5"],["300 3 5", "1500 1", "100 1 3","50 12"]],
+        [300000,
+         [' '.join(map(str,[3000*i+1,i+1])) for i in range(300000)],
+         [str(3000*(300000-1))+" 2","1000000000 1","500 300001",
+          "1 300000","1 1"]*10000],
+        [5,["1 2 4","200 1 3"],["1 1","5000 3"]]
+    ]
+    expectations = [
+        [3,3,1,0],
+        [300000,0,0,300000,1]*10000,
+        [2,0]
+    ]
+    run_test(testcases,expectations,solution)

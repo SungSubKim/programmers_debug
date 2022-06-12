@@ -1,5 +1,5 @@
-from solution import *
-from time import time
+from solution4 import *
+from main0 import run_test
 
 ##########코테 보기전 화장실
 ##########코테 보기전 화장실
@@ -14,21 +14,4 @@ if __name__ == '__main__':
                  ["99:59:59","00:00:05",["99:59:58-99:59:59" for _ in range(300000)]]
                  ]
     expectations = ["01:30:59", "01:00:00", "00:00:00","99:59:54"]
-    cnt=0
-    for i, tc in enumerate(testcases):
-        start = time()
-        real_val = solution(*tc)
-        print('Testcase',end=' - ')
-        print(i)
-        print('{0:<10}'.format('Input'), end=': ')
-        print(tc if len(str(tc))<=200 else 'bigger than 200')
-        print('{0:<10}'.format('Real value'), end=': ')
-        print(real_val)
-        print('{0:<10}'.format('Expected'), end=': ')
-        print(expectations[i])
-        print('{0:<10}'.format('Result')+':', expectations[i]==real_val)
-        print('{0:<10}'.format('Time')+':', int((time()-start)*1000),'ms')
-        print()
-        if expectations[i]==real_val: cnt+=1
-    print('End\n{0:<10}: {1}/{2} '.format('Total result',cnt,len(testcases)))
-    if cnt==len(testcases): print('All passed!')
+    run_test(testcases,expectations,solution)

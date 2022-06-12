@@ -11,7 +11,7 @@ def solution(n, rooks):
     def dfs(i):
         nonlocal banned,answer
         if len(selected) ==rooks:
-            # if not [1 for tmp in banned if not tmp] :
+            return "hi"
             answer+=1
             return
         for idx,v in enumerate(pool):
