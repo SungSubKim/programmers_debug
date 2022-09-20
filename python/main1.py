@@ -1,8 +1,6 @@
-from solution import *
+from solution1 import *
 from main0 import run_test
 
-##########코테 보기전 화장실
-##########코테 보기전 화장실
 ##########코테 보기전 화장실
 if __name__ == '__main__':
     testcases = [
