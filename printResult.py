@@ -1,5 +1,5 @@
 from time import time
-def run_test(testcases,expectations,solution):
+def runTest(testcases, expectations, solution):
     cnt=0
     print_tc = lambda x: print(*x,sep=' // ') if len(str(x))<=200 else print('bigger than 200',sep=' // ')
     print_val = lambda x: (print(x) if type(x)==type([]) else print(x)) if len(str(x))<=200 \
